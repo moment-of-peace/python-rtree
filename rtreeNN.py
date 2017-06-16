@@ -62,21 +62,17 @@ def bestFirst(tupleList, query):
             tupleList.append((nDis(child, query), child))
         # sort the tuple list by distance
         tupleList = sorted(tupleList, key=lambda t:t[0])
-        # in this case, the NN has been found
-        if distance < tupleList[0][0]:
-            return
-        # implement Best First algorithm resursively
-        bestFirst(tupleList, query)
     elif isinstance(tupleList[0][1], Rtree.Leaf):
         node = tupleList[0][1]
         # remove the first element in the tuple list
         del tupleList[0]
         getNN(node, query)
-        # in this case, the NN has been found
-        if distance < tupleList[0][0]:
-            return
-        # implement Best First algorithm resursively
-        bestFirst(tupleList, query)
+        
+    # in this case, the NN has been found
+    if distance < tupleList[0][0]:
+        return
+    # implement Best First algorithm resursively
+    bestFirst(tupleList, query)
 
 # answer all the queries using "Best First" algorithm with a given r-tree
 def answerNnQueries(root, queries):

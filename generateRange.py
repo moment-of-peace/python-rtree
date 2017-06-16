@@ -15,12 +15,12 @@ import random
 
 # define a random rectangular and write into file
 def buildRectangular(fileHandle, rangeLimit, lenLimit):
-    length = round(random.uniform(-lenLimit, lenLimit),2)
+    length = random.uniform(-lenLimit, lenLimit)
     x1 = round(random.uniform(-rangeLimit, rangeLimit),2)
-    x2 = x1 + length
-    length = round(random.uniform(-lenLimit, lenLimit),2)
+    x2 = round(x1 + length, 2)
+    length = random.uniform(-lenLimit, lenLimit)
     y1 = round(random.uniform(-rangeLimit, rangeLimit),2)
-    y2 = y1 + length
+    y2 = round(y1 + length, 2)
     
     content = str(x1) + ' ' + str(x2) + ' ' + str(y1) + ' ' + str(y2)
     fileHandle.write(content + '\r\n')
