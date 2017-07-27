@@ -2,7 +2,6 @@
 Implement rtree range queries and nearest neighbour queries, and compare with sequentially scanning
 
 Author: Yi Liu
-E-mail: yi.liu1183@gmail.com
 
 ***************************** R-tree files **********************************
 
